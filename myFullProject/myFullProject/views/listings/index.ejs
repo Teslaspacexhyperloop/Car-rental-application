@@ -1,0 +1,16 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+        <% for (let listing of allListings) { %>
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+                <div class="card listing-card col">
+                    <img src="<%= listing.images.length > 0 ? listing.images[0].url : '/default-image.jpg' %>" 
+                         class="card-img-top" alt="listing_image" style="height: 20rem;">
+                    <div class="card-body">
+                        <p class="card-text"><b><%= listing.title %></b></p>
+                    </div>
+                </div>
+            </a>
+        <% } %>
+    </div>
+</body>
