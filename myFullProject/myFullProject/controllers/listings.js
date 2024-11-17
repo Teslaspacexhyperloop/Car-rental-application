@@ -111,7 +111,7 @@ module.exports.updateListing=async(req,res)=>{
     }
     
     req.flash("success","Car Listing updated");
-    res.redirect(/listings/${id});
+    res.redirect(`/listings/${id}`);
 }
 
 module.exports.destroyListing=async(req,res)=>{
